@@ -17,8 +17,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         btn_pay_with_bkash.onClick {
+            val amount = editTextAmount.text.toString()
             val intent = Intent(this@MainActivity, BkashPaymentActivity::class.java)
-            intent.putExtra("amount", "15")
+            intent.putExtra("amount", amount)
             //intent.putExtra("intent", "sale") //if you require Immediate transfer
             intent.putExtra("intent", "authorization") // if you require Auth & Capture
             startActivity(intent)
